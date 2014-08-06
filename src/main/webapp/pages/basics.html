@@ -1,0 +1,139 @@
+<style>
+
+    ol li{
+        padding-top: 5px;
+    }
+
+    .scopeDemo.ng-scope{
+        border: 1px solid red; margin: 3px;
+    }
+
+    div[contenteditable] {
+        cursor: pointer;
+        background-color: #D0D0D0;
+        margin-bottom: 1em;
+        padding: 1em;
+    }
+</style>
+
+
+<div class="col-md-9">
+    <div class="row">
+
+        <h3>Basic Examples</h3><hr>
+        <ol>
+            <!-- Hello World : Two-way data binding -->
+            <li>Hello World : Two way data binding</li>
+            <input type="text" ng-model="name" placeholder="Enter text"/>
+            <p ng-show="name">Hello {{name}}</p>
+
+            <!-- Timer : Two-way data binding -->
+            <li>Clock Timer : Two-way data binding</li>
+            <h4>{{clock.now | date:'medium'}}</h4>
+
+            <!-- Scopes and nested scopes -->
+            <li>Scope : Scopes are single source of truth for application state. Scope is responsible for detecting changes to model
+                and provide execution for expressions. Scopes are nested in hierarchical structure as per DOM structure.
+                <span style="color:red"> Red border shows a sub-parent and its child scopes.</span> </li>
+            <div ng-controller="NameListController" class="scopeDemo">
+                <ul>
+                    <li ng-repeat="name in names" class="scopeDemo">{{name}}</li>
+                </ul>
+            </div>
+
+            <!-- Directive Example -->
+            <li>Directive : A directive allows you to extend HTML vocabulary in a declarative fashion.</li>
+            <b>Edit below text and see value change 'onblur'</b>
+            <div contentEditable="true" ng-model="content">Edit me</div>
+            <pre>model = {{content}}</pre>
+
+            <!-- Filters example -->
+            <li>Filters : Filter is used to perform data transformation. Below are examples of different filters.</li>
+            <div ng-init="browserList = ['Firefox', 'Chrome', 'IE', 'Opera', 'Safari']">
+                List Filter : <input type="text" ng-model="browserValue" placeholder="Choose browser...">
+                {{browserList | filter:browserValue | json}}
+            </div>
+
+            <div class="col-md-5">
+                <br>
+                Number Filters
+                <ul>
+                    <li>Number Filter : {{1234567890 | number}}</li>
+                    <li>Decimal (round 2): {{1234.5678 | number:2}}</li>
+                </ul>
+                <br>
+                Currency Filter
+                <ul>
+                    <li>Currency : {{123 | currency}}</li>
+                </ul>
+                <br>
+                Date Filters
+                <ul>
+                    <li>Date (medium) : {{clock.now | date:'medium'}}</li>
+                    <li>Date (short) : {{clock.now | date:'short'}}</li>
+                    <li>Date (fullDate) : {{clock.now | date:'fullDate'}}</li>
+                    <li>Date (longDate) : {{clock.now | date:'longDate'}}</li>
+                    <li>Date (mediumDate) : {{clock.now | date:'mediumDate'}}</li>
+                    <li>Date (shortDate) : {{clock.now | date:'shortDate'}}</li>
+                    <li>Date (mediumTime) : {{clock.now | date:'mediumTime'}}</li>
+                    <li>Date (shortTime) : {{clock.now | date:'shortTime'}}</li>
+                </ul>
+                <br>
+                Year Filter Formatting
+                <ul>
+                    <li>Four digit year : {{clock.now | date:'yyyy'}}</li>
+                    <li>Two digit year : {{clock.now | date:'yy'}}</li>
+                    <li>One digit year : {{clock.now | date:'y'}}</li>
+                </ul>
+                <br>
+                Month Filter Formatting
+                <ul>
+                    <li>Month Full: {{clock.now | date:'MMMM'}}</li>
+                    <li>Month Short: {{clock.now | date:'MMM'}}</li>
+                    <li>Month in year: (0 padding): {{clock.now | date:'MM'}}</li>
+                    <li>Month in year: {{clock.now | date:'M'}}</li>
+                </ul>
+
+            </div>
+
+            <div class="col-md-4">
+                <br>
+                Day Filter Formatting
+                <ul>
+                    <li>Padded day in month: {{clock.now | date:'dd'}}</li>
+                    <li>Day in month: {{clock.now | date:'d'}}</li>
+                    <li>Day in week: {{clock.now | date:'EEEE'}}</li>
+                    <li>Short day in week: {{clock.now | date:'EEE'}}</li>
+                </ul>
+                <br>
+                Hour Filter Formatting
+                <ul>
+                    <li>Padded hour in day: {{clock.now | date:'HH'}}</li>
+                    <li>Hour in day: {{clock.now | date:'H'}}</li>
+                    <li>Padded hour in am/pm: {{clock.now | date:'hh'}}</li>
+                    <li>Hour in am/pm: {{clock.now | date:'h'}}</li>
+                </ul>
+                <br>
+                Minute Filter Formatting
+                <ul>
+                    <li>Padded minute in hour: {{clock.now | date:'mm'}}</li>
+                    <li>Minute in hour: {{clock.now | date:'m'}}</li>
+                </ul>
+                <br>
+                Second Filter Formatting
+                <ul>
+                    <li>Padded second in minute: {{clock.now | date:'ss'}}</li>
+                    <li>Second in minute: {{clock.now | date:'s'}}</li>
+                </ul>
+                <br>
+                Custom Filters for date
+                <ul>
+                    <li>MMM d, y => {{clock.now | date:'MMM d, y'}}</li>
+                    <li>MMMM dd yyyy, HH mm ss => {{clock.now | date:'MMMM dd yyyy, HH mm ss'}}</li>
+                </ul>
+            </div>
+
+        </ol>
+    </div>
+</div>
+

@@ -1,10 +1,71 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Start Page</title>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    </head>
-    <body>
-        <h1>Hello World!</h1>
-    </body>
+<!--[if lt IE 7]>
+<html lang="en" ng-app="practiceAngularApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html lang="en" ng-app="demoApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html lang="en" ng-app="demoApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en" ng-app="demoApp" class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Hands on AngularJS</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap core CSS -->
+    <link href="lib/bootstrap/bootstrap.css" rel="stylesheet">
+    <link href="lib/jquery-ui/jquery-ui.css" rel="stylesheet">
+    <link href="css/app.css" rel="stylesheet"/>
+</head>
+
+<body>
+
+<!-- Nav Bar -->
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#/home" style="color: #ffffff;">Hands On AngularJS</a>
+        </div>
+    </div>
+</nav>
+
+<!-- Container which will load different pages -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="list-group">
+                <a href="#/home" class="list-group-item">Home</a>
+                <a href="#/basics" class="list-group-item">Basic Examples</a>
+                <a href="#/formValidation" class="list-group-item">Form Validation</a>
+                <a href="#/directive" class="list-group-item">Directive Examples</a>
+            </div>
+        </div>
+        
+        <div ng-view></div>
+    </div>
+</div>
+
+
+<!--[if lt IE 7]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/?locale=en">upgrade
+    your browser</a> to improve your experience.</p>
+<![endif]-->
+<!-- JavaScript -->
+<script src="lib/jquery/jquery.js"></script>
+<script src="lib/jquery-ui/jquery-ui.js"></script>
+<script src="lib/angular/angular.js"></script>
+<script src="lib/angular-route/angular-route.js"></script>
+<script src="js/app.js"></script>
+<script src="js/services.js"></script>
+<script src="js/controllers.js"></script>
+<script src="js/filters.js"></script>
+<script src="js/directives.js"></script>
+
+<script src="js/services/HttpService.js"></script>
+<script src="js/AppConstants.js"></script>
+<script src="js/AppTextConstants.js"></script>
+<script src="js/AppUtils.js"></script>
+
+</body>
 </html>

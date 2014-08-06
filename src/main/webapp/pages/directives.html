@@ -1,0 +1,64 @@
+<div class="col-md-9">
+    <div class="row">
+
+        <h3>Directive Examples 1</h3>
+        <h4>Integration with JQuery UI Widgets : Every control below is a custom directive.</h4>
+        <ol>
+
+        <li>JQuery Date Picker</li>
+        Date : <input type="text" ng-model="datePicker" placeholder="DD/MM/YYYY" my-datepicker />
+        <p ng-show="datePicker">Selected Date => {{datePicker | date:'dd/MM/yyyy'}}</p>
+        <hr>
+
+        <li>JQuery Tabs</li>
+        <div id="tabs" my-tabs>
+            <ul>
+                <li><a href="#tabs-1">Tab 1</a></li>
+                <li><a href="#tabs-2">Tab 2</a></li>
+                <li><a href="#tabs-3">Tab 3</a></li>
+            </ul>
+            <div id="tabs-1">
+                <p>Content for Tab 1</p>
+            </div>
+            <div id="tabs-2">
+                <p>Content for Tab 2</p>
+            </div>
+            <div id="tabs-3">
+                <p>Content for Tab 3</p>
+            </div>
+        </div>
+        <hr>
+
+
+        <li>JQuery Accordion</li>
+        <div id="accordion" my-accordion>
+            <h3>Section 1</h3>
+            <div>
+                <p>This is section 1</p>
+            </div>
+            <h3>Section 2</h3>
+            <div>
+                <p>This is section 2</p>
+            </div>
+            <h3>Section 3</h3>
+            <div>
+                <p>This is section 3</p>
+                <ul>
+                    <li>List item one</li>
+                    <li>List item two</li>
+                    <li>List item three</li>
+                </ul>
+            </div>
+            <h3>Section 4</h3>
+            <div>
+                <p>This is section 4</p>
+                <p>Some more data...</p>
+            </div>
+        </div>
+
+        </ol>
+
+
+
+    </div>
+</div>
