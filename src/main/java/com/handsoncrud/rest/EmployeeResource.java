@@ -6,11 +6,12 @@
 
 package com.handsoncrud.rest;
 
+import com.handsoncrud.ctrl.EmployeeCtrl;
+import com.handsoncrud.ctrl.impl.EmployeeCtrlImpl;
 import com.handsoncrud.dto.EmployeeDTO;
 import com.handsoncrud.utils.AppUtils;
 import java.util.Date;
 import javax.ws.rs.FormParam;
-import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
@@ -48,8 +49,12 @@ public class EmployeeResource {
         emp.setFname(empID + " Sandeep");
         emp.setLname("Kulkarni");
         emp.setEmail("sandeep.kul88@gmail.com");
+        emp.setGender("M");
         emp.setBirthDt(AppUtils.getStringDate(new Date()));
         emp.setJoinDt(AppUtils.getStringDate(new Date()));
+        
+        EmployeeCtrl empCtrl = new EmployeeCtrlImpl();
+        empCtrl.saveEmployee(emp);
         
         return emp;
     }

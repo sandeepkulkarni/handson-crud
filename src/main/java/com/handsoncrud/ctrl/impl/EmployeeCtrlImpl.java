@@ -9,6 +9,7 @@ package com.handsoncrud.ctrl.impl;
 import com.handsoncrud.ctrl.EmployeeCtrl;
 import com.handsoncrud.dao.EmployeeDao;
 import com.handsoncrud.dao.impl.EmployeeDaoImpl;
+import com.handsoncrud.dto.EmployeeDTO;
 import com.handsoncrud.entity.Employees;
 import java.util.List;
 
@@ -21,18 +22,29 @@ public class EmployeeCtrlImpl implements EmployeeCtrl {
     EmployeeDao employeeDao = new EmployeeDaoImpl();
     
     @Override
-    public void saveEmployee(Employees employee) {
+    public void saveEmployee(EmployeeDTO employeeDTO) {
+        Employees employee = mapEmployeeDtoToEntity(employeeDTO);
         employeeDao.saveEmployee(employee);
     }
 
     @Override
-    public Employees getEmployee(Integer empId) {
-        return employeeDao.getEmployee(empId);
+    public EmployeeDTO getEmployee(Integer empId) {
+        return null;//employeeDao.getEmployee(empId);
     }
 
     @Override
-    public List<Employees> getEmployees() {
-        return employeeDao.getEmployees();
+    public List<EmployeeDTO> getEmployees() {
+        return null;//employeeDao.getEmployees();
+    }
+    
+    /**
+     * Private methods specific to Employee Controller
+     */
+    private Employees mapEmployeeDtoToEntity(EmployeeDTO employeeDTO){
+        Employees employee = new Employees();
+        
+//        employee.set
+        return null;
     }
     
 }

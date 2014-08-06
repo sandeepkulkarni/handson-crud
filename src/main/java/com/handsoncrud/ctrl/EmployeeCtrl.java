@@ -6,7 +6,7 @@
 
 package com.handsoncrud.ctrl;
 
-import com.handsoncrud.entity.Employees;
+import com.handsoncrud.dto.EmployeeDTO;
 import java.util.List;
 
 /**
@@ -15,10 +15,10 @@ import java.util.List;
  */
 public interface EmployeeCtrl {
     
-    public void saveEmployee(Employees employee);
+    public void saveEmployee(EmployeeDTO employee);
     
-    public Employees getEmployee(Integer empId);
+    public EmployeeDTO getEmployee(Integer empId);
     
-    public List<Employees> getEmployees();    
+    public List<EmployeeDTO> getEmployees();    
     
 }
