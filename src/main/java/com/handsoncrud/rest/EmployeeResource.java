@@ -53,19 +53,32 @@ public class EmployeeResource {
         emp.setBirthDt(AppUtils.getStringDate(new Date()));
         emp.setJoinDt(AppUtils.getStringDate(new Date()));
         
-        EmployeeCtrl empCtrl = new EmployeeCtrlImpl();
-        empCtrl.saveEmployee(emp);
+        //EmployeeCtrl empCtrl = new EmployeeCtrlImpl();
+        //empCtrl.saveEmployee(emp);
         
         return emp;
     }
-
-    /**
-     * PUT method for updating or creating an instance of EmployeeResource
-     * @param content representation for the resource
-     * @return an HTTP response with content of the updated or created resource.
-     */
-    /*@PUT
-    @Consumes("application/json")
-    public void putJson(EmployeeDTO content) {
-    }*/
+    
+    @POST
+    @Path("/saveEmp")
+    @Produces(MediaType.APPLICATION_JSON)
+    public EmployeeDTO saveEmployee(@FormParam("empObj") String employeeDTO) {
+        
+        System.out.println("******* employeeDTO = "+employeeDTO);
+        
+        EmployeeDTO emp = new EmployeeDTO();
+        
+        emp.setEmpId(1);
+        emp.setFname(" Sandeep");
+        emp.setLname("Kulkarni");
+        emp.setEmail("sandeep.kul88@gmail.com");
+        emp.setGender("M");
+        emp.setBirthDt(AppUtils.getStringDate(new Date()));
+        emp.setJoinDt(AppUtils.getStringDate(new Date()));
+        
+        //EmployeeCtrl empCtrl = new EmployeeCtrlImpl();
+        //empCtrl.saveEmployee(emp);
+        
+        return emp;
+    }
 }

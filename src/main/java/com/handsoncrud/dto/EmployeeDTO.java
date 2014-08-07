@@ -74,5 +74,9 @@ public class EmployeeDTO {
     public void setJoinDt(String joinDt) {
         this.joinDt = joinDt;
     }
-    
+
+    @Override
+    public String toString() {
+        return "EmployeeDTO{" + "empId=" + empId + ", fname=" + fname + ", lname=" + lname + ", email=" + email + ", birthDt=" + birthDt + ", joinDt=" + joinDt + ", gender=" + gender + '}';
+    }
 }
